@@ -1,0 +1,12 @@
+# gb_service 数据库连接配置（key=value）
+# 说明：
+# 1) 程序优先读取 config/gb_service.ini；读取失败会回退默认值。
+# 2) 必填项：dbname、user
+# 3) 可选项：host、port、password
+
+# 推荐本机 Unix Socket（与当前默认行为一致）
+host=/var/run/postgresql  | 127.0.0.1
+port=5432
+dbname=gb28181
+user=user
+password=

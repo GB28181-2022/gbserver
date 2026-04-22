@@ -1,0 +1,3 @@
+ALTER TABLE device_platforms
+    ADD COLUMN IF NOT EXISTS src_ip VARCHAR(128),
+    ADD COLUMN IF NOT EXISTS src_port INTEGER;

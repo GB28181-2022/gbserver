@@ -1,0 +1,228 @@
+/* 全局极简浅色主题 */
+
+:root {
+  color-scheme: light;
+
+  /* 布局尺寸 */
+  --gb-layout-header-height: 56px;
+  --gb-layout-sidebar-width: 220px;
+
+  /* 颜色系统（浅色工业风） */
+  --gb-bg: #f3f4f6;
+  --gb-bg-elevated: #ffffff;
+  --gb-bg-soft: #e5e7eb;
+
+  --gb-border-subtle: rgba(15, 23, 42, 0.06);
+  --gb-border-strong: rgba(15, 23, 42, 0.16);
+
+  --gb-text-main: #111827;
+  --gb-text-muted: #6b7280;
+  --gb-text-soft: #9ca3af;
+
+  --gb-accent: #3b82f6;
+  --gb-accent-soft: rgba(59, 130, 246, 0.14);
+  --gb-accent-strong: #60a5fa;
+
+  --gb-danger: #f97373;
+  --gb-success: #22c55e;
+  --gb-warning: #facc15;
+
+  /* 圆角与阴影 */
+  --gb-radius-sm: 4px;
+  --gb-radius-md: 8px;
+  --gb-radius-lg: 12px;
+
+  --gb-shadow-subtle: 0 1px 0 rgba(15, 23, 42, 0.02),
+    0 0 0 1px rgba(15, 23, 42, 0.04);
+  --gb-shadow-soft: 0 18px 40px rgba(15, 23, 42, 0.16);
+
+  /* 间距 */
+  --gb-spacing-xs: 4px;
+  --gb-spacing-sm: 8px;
+  --gb-spacing-md: 16px;
+  --gb-spacing-lg: 24px;
+  --gb-spacing-xl: 32px;
+}
+
+html,
+body,
+#app {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: radial-gradient(circle at 0% 0%, #e5e7eb 0, #f9fafb 45%, #ffffff 100%);
+  color: var(--gb-text-main);
+  font-family: "HarmonyOS Sans SC", "Segoe UI Variable Text", "PingFang SC",
+    "Microsoft YaHei UI", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  overflow: hidden;
+}
+
+/* 通用页面容器 */
+.page {
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.page-title {
+  margin: 0 0 var(--gb-spacing-md) 0;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: #111827;
+}
+
+.page-subtitle {
+  margin: -4px 0 var(--gb-spacing-lg) 0;
+  font-size: 13px;
+  color: var(--gb-text-soft);
+}
+
+.page-section {
+  margin-bottom: var(--gb-spacing-lg);
+}
+
+/* Element Plus 主题微调：卡片与容器 */
+.el-card {
+  background-color: var(--gb-bg-elevated) !important;
+  border-color: var(--gb-border-subtle) !important;
+  border-radius: var(--gb-radius-md) !important;
+  box-shadow: var(--gb-shadow-subtle) !important;
+}
+
+.el-card__header {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-bottom-color: rgba(148, 163, 184, 0.24);
+  color: var(--gb-text-muted);
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.el-main {
+  background-color: transparent !important;
+}
+
+/* Element Plus 按钮 */
+.el-button--primary {
+  background-color: var(--gb-accent) !important;
+  border-color: var(--gb-accent) !important;
+}
+
+.el-button--primary.is-plain {
+  background-color: rgba(15, 23, 42, 1) !important;
+  border-color: var(--gb-accent-soft) !important;
+  color: var(--gb-accent-strong) !important;
+}
+
+.el-button--primary:hover,
+.el-button--primary:focus-visible {
+  background-color: var(--gb-accent-strong) !important;
+  border-color: var(--gb-accent-strong) !important;
+}
+
+.el-button.is-text,
+.el-button.is-plain {
+  border-radius: 999px !important;
+}
+
+/* 表单与输入 */
+.el-form-item__label {
+  color: var(--gb-text-soft) !important;
+}
+
+.el-input__wrapper,
+.el-select__wrapper,
+.el-textarea__inner {
+  background-color: #ffffff !important;
+  box-shadow: 0 0 0 1px rgba(148, 163, 184, 0.5) inset !important;
+}
+
+.el-input__inner,
+.el-select__selected-item {
+  color: var(--gb-text-main) !important;
+}
+
+/*
+ * el-switch 内部为原生 checkbox（.el-switch__input），默认 width/height:0。
+ * 部分浏览器或全局 reset 会还原尺寸，导致在页面任意位置露出「小方框」，
+ * 常被误认为流媒体配置区多出的复选框。使用 sr-only 式裁剪彻底隐藏。
+ */
+.el-switch .el-switch__input {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  clip-path: inset(50%) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+/* 表格 */
+.el-table {
+  --el-table-bg-color: #ffffff;
+  --el-table-header-bg-color: #f3f4f6;
+  --el-table-tr-bg-color: #ffffff;
+  --el-table-border-color: rgba(148, 163, 184, 0.5);
+  color: var(--gb-text-main);
+}
+
+.el-table thead {
+  font-size: 12px;
+  color: var(--gb-text-soft);
+}
+
+.el-table__row:hover > td.el-table__cell {
+  background-color: rgba(191, 219, 254, 0.5) !important;
+}
+
+/* 对话框 */
+.el-dialog {
+  background-color: #ffffff !important;
+  border-radius: var(--gb-radius-lg) !important;
+  box-shadow: var(--gb-shadow-soft) !important;
+}
+
+.el-dialog__header {
+  border-bottom: 1px solid rgba(148, 163, 184, 0.25);
+}
+
+.el-dialog__title {
+  font-size: 14px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--gb-text-muted);
+}
+
+/* 标记与提示 */
+.el-tag {
+  border-radius: 999px;
+}
+
+.el-alert {
+  border-radius: var(--gb-radius-md);
+}
+
+/* 页面转场与微动效 */
+.view-fade-enter-active,
+.view-fade-leave-active {
+  transition: opacity 0.18s ease-out, transform 0.18s ease-out;
+}
+
+.view-fade-enter-from,
+.view-fade-leave-to {
+  opacity: 0;
+  transform: translateY(4px);
+}
+

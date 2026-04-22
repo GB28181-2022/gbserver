@@ -1,0 +1,16 @@
+[Unit]
+Description=GB28181 Service
+After=network.target postgresql.service
+
+[Service]
+Type=simple
+User=user
+WorkingDirectory=/opt/gb_service2022/backend
+ExecStart=/opt/gb_service2022/backend/gb_service
+Restart=always
+RestartSec=5
+StandardOutput=append:/var/log/gb_service.log
+StandardError=append:/var/log/gb_service.log
+
+[Install]
+WantedBy=multi-user.target

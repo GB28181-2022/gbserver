@@ -1,0 +1,6 @@
+[submodule "third_party/pjproject"]
+	path = third_party/pjproject
+	url = https://github.com/pjsip/pjproject.git
+[submodule "third_party/ZLToolKit"]
+	path = third_party/ZLToolKit
+	url = https://github.com/ZLMediaKit/ZLToolKit.git

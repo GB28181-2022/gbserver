@@ -1,0 +1,66 @@
+# Frontend
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+*.local
+
+# Env & secrets (keep *.example committed)
+.env
+.env.*
+!.env.example
+
+# CMake / C++ build
+build/
+cmake-build-*/
+out/
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+compile_commands.json
+CTestTestfile.cmake
+*.o
+*.a
+*.so
+*.so.*
+*.dylib
+*.dll
+*.exe
+
+# 本地 IDE / 助手目录（不入库）
+.cursor/
+.claude/
+.trae/
+
+# 本地 Git 工作流脚本（每人自建；不入库）
+scripts/check-staged-comments.sh
+scripts/git-commit.sh
+scripts/git-push.sh
+scripts/validate-commit-message.sh
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Local logs & built binary at repo root (if present)
+*.log
+/gb_service
+
+# Local terminal proxy helper (optional; keep untracked if customized per machine)
+scripts/set-terminal-proxy.sh
+
+# Submodule migration backups (do not commit vendored trees)
+third_party/pjproject.bak/
+third_party/ZLToolKit.bak/
+
+# Keys & certs (use *.example for templates)
+*.pem
+*.key
+!*.example
